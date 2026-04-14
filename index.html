@@ -1,0 +1,229 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameHub</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', Arial;
+    background:#0b1020;
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:30px 10px;
+}
+
+header h1{
+    margin:0;
+    font-size:36px;
+    color:#22c55e;
+}
+
+/* CATEGORY */
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.cat-btn{
+    width:180px;
+    height:120px;
+    border:none;
+    border-radius:20px;
+    background:#111827;
+    color:white;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.cat-btn span{
+    font-size:40px;
+}
+
+.cat-btn:hover{
+    transform:scale(1.08);
+    background:#1f2937;
+}
+
+/* GRID */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:#111827;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card h3{
+    margin:0;
+    color:#22c55e;
+}
+
+.card p{
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎮 GameHub</h1>
+    <p>En iyi oyunları keşfet</p>
+</header>
+
+<div class="categories">
+    <button class="cat-btn" onclick="filtre('all')">
+        <span>🌍</span>Tümü
+    </button>
+
+    <button class="cat-btn" onclick="filtre('pc')">
+        <span>💻</span>PC
+    </button>
+
+    <button class="cat-btn" onclick="filtre('mobil')">
+        <span>📱</span>Mobil
+    </button>
+</div>
+
+<div class="container">
+
+<!-- PC OYUNLARI -->
+
+<div class="card pc">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjeB4Yi64mXC35EFeSAAHFzzj_GDzaan2f5g&s">
+    <div class="card-content">
+        <h3>Resident Evil Requiem</h3>
+        <p>Gerilimli korku, araştırma ve bilim temalı oyun.</p>
+    </div>
+</div>
+
+<div class="card pc">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn69S3aVURG5Zw_eNQA4tDW1U1CQskHHKALQ&s">
+    <div class="card-content">
+        <h3>Crimson Desert</h3>
+        <p>Aksiyon, savaş ve intikam temalı açık dünya deneyimi.</p>
+    </div>
+</div>
+
+<!-- MOBİL OYUNLAR -->
+
+<div class="card mobil">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsdRyV5V_e9eyU9hiLhRXwWTkbtpjMMkD_DQ&s">
+    <div class="card-content">
+        <h3>Zenless Zone Zero</h3>
+        <p>Hikaye odaklı modern aksiyon RPG deneyimi.</p>
+    </div>
+</div>
+
+<div class="card mobil">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlIQtUWjQIb25nfQjlD66Vp0nF59Q3PkvVpw&s">
+    <div class="card-content">
+        <h3>Rainbow Six Siege Mobile</h3>
+        <p>Aksiyon ve FPS odaklı rekabetçi mobil oyun.</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+function filtre(tur){
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(c=>{
+        if(tur==="all"){
+            c.style.display="block";
+        }else{
+            c.style.display = c.classList.contains(tur) ? "block":"none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
+
+
+
+<div class="card pc">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5-Djt_X_SG2BnX-9cxXrNmptulRHRFc-YMQ&s">
+    <div class="card-content">
+        <h3>The Witcher 3</h3>
+        <p>Yetişkinlere yönelik açık dünya RPG deneyimi.</p>
+    </div>
+</div>
+
+<div class="card pc">
+    <img src="https://ares.shiftdelete.net/2021/02/Subnautica-1.jpg">
+    <div class="card-content">
+        <h3>Subnautica</h3>
+        <p>Su altı keşif ve hayatta kalma oyunu.</p>
+    </div>
+</div>
+
+
+<div class="card mobil">
+    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2602/30935168a0f21b6710dc2bd7bb37c23ed937fb9fa747d84c.png">
+    <div class="card-content">
+        <h3>Genshin Impact</h3>
+        <p>Açık dünya aksiyon RPG deneyimi.</p>
+    </div>
+</div>
+
+<div class="card mobil">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9XP7s238famtHtAfnXt8JdFwlTDodynJXvg&s">
+    <div class="card-content">
+        <h3>Arknights</h3>
+        <p>Taktiksel RPG strateji oyunu.</p>
+    </div>
+</div>
+

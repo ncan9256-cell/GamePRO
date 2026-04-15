@@ -122,6 +122,21 @@ header h1{
 </header>
 
 <div class="categories">
+    <div style="text-align:center; margin:20px;">
+    <input 
+        type="text" 
+        id="arama" 
+        placeholder="Oyun ara..." 
+        onkeyup="aramaYap()"
+        style="
+            padding:15px;
+            width:60%;
+            max-width:400px;
+            border-radius:10px;
+            border:none;
+            font-size:16px;
+        ">
+</div>
     <button class="cat-btn" onclick="filtre('all')">
         <span>🌍</span>Tümü
     </button>
@@ -188,7 +203,20 @@ function filtre(tur){
     });
 }
 </script>
+function aramaYap(){
+    let input = document.getElementById("arama").value.toLowerCase();
+    let kartlar = document.querySelectorAll(".card");
 
+    kartlar.forEach(kart=>{
+        let baslik = kart.querySelector("h3").innerText.toLowerCase();
+
+        if(baslik.includes(input)){
+            kart.style.display="block";
+        }else{
+            kart.style.display="none";
+        }
+    });
+}
 </body>
 </html>
 
